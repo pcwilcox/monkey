@@ -472,12 +472,11 @@ func checkParserErrors(t *testing.T, p *Parser) {
 func TestReturnStatement(t *testing.T) {
 	tests := []struct {
 		input         string
-		expectedValue string
+		expectedValue interface{}
 	}{
-		{input: "return 5;", expectedValue: "5"},
-		{input: "return 10;", expectedValue: "10"},
-		{input: "return 993322;", expectedValue: "993322"},
-		{input: "return;", expectedValue: ""},
+		{input: "return 5;", expectedValue: 5},
+		{input: "return 10;", expectedValue: 10},
+		{input: "return 993322;", expectedValue: 993322},
 	}
 
 	for _, tt := range tests {
